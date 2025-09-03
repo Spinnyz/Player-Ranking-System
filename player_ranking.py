@@ -23,3 +23,11 @@ class Ranking:
                 print (f"O jogador {nome} foi removido do ranking.")
                 return
         print (f"O jogador {nome} não foi encontrado no ranking.")
+    
+    def atualizar_pontuacao(self,nome,pontos):
+        for jogador in self.jogadores:
+            if jogador.nome == nome:
+                jogador.adicionar_pontos(pontos)
+                print (f"A pontuação de {nome} foi atualizado para {jogador.pontuacao}")
+                return
+            print (f"O jogador {nome} não foi encontrado")
