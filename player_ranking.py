@@ -30,14 +30,14 @@ class Ranking:
                 jogador.adicionar_pontos(pontos)
                 print (f"A pontuação de {nome} foi atualizado para {jogador.pontuacao}")
                 return
-            print (f"O jogador {nome} não foi encontrado")
+        print (f"O jogador {nome} não foi encontrado")
     
     def listar_ranking(self):
         for jogador in sorted (self.jogadores, key=lambda jogador: jogador.pontuacao, reverse=True):
             print (jogador)
     
     def top_jogadores(self):
-        return [Jogador.nome for jogador in self.jogadores if jogador.pontuacao >= 40]
+        return [jogador.nome for jogador in self.jogadores if jogador.pontuacao >= 40]
     
     def buscar_jogadores(self,nome):
         for jogador in self.jogadores:
