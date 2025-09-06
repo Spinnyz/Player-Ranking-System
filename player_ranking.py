@@ -31,3 +31,7 @@ class Ranking:
                 print (f"A pontuação de {nome} foi atualizado para {jogador.pontuacao}")
                 return
             print (f"O jogador {nome} não foi encontrado")
+    
+    def listar_ranking(self):
+        for jogador in sorted (self.jogadores, key=lambda jogador: jogador.pontuacao, reverse=True):
+            print (jogador)
