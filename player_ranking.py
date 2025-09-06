@@ -20,9 +20,11 @@ class Jogador:
 
 
 class Ranking:
-    def __init__(self):
+    def __init__(self, arquivo="ranking.json"):
         self.jogadores = []
-        self
+        self.arquivo  = arquivo
+        self.carregar_ranking()
+    
 
     def adicionar_jogador(self,nome,pontuacao):
         self.jogadores.append(Jogador(nome,pontuacao))
@@ -56,5 +58,18 @@ class Ranking:
                 print (jogador)
                 return
         print (f"O jogador {nome} não foi encontrado")
+
+    def salvar(self):
+        with open(self.arquivo,"w") as file:
+            json.dump([jogador.p_dict() for jogador in self.jogadores],file)
+
+    def carregar(self):
+        try:
+            with open(self.arquivo, "r", encoding="utf-8") as file:
+                data = json.load(file)
+                self.jogadores = [Jogador.from_dict(jogador_data) for jogador_data in data]
+        except FileNotFoundError:
+            self.jogadores = []
+
 
 
