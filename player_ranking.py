@@ -47,7 +47,7 @@ class Ranking:
         print (f"O jogador {nome} não foi encontrado")
 
 
-Ranking = Ranking()
+ranking = Ranking()
 
 while True:
 
@@ -65,7 +65,7 @@ while True:
 
     match opcao:
         case "1":
-            nome = input("Digite o nome do jogador: ")
+            nome = input("Digite o nome do jogador: ").title()
             pontuacao = int(input("Digite a pontuação do jogador: "))  
             Ranking.adicionar_jogador(nome,pontuacao)
         case "2":
