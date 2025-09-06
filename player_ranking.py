@@ -39,4 +39,10 @@ class Ranking:
     def top_jogadores(self):
         return [Jogador.nome for jogador in self.jogadores if jogador.pontuacao >= 40]
     
-    def 
+    def buscar_jogadores(self,nome):
+        for jogador in self.jogadores:
+            if jogador.nome == nome:
+                print (jogador)
+                return
+        print (f"O jogador {nome} não foi encontrado")
+    
