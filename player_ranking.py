@@ -46,7 +46,11 @@ class Ranking:
                 return
         print (f"O jogador {nome} não foi encontrado")
 
+
+Ranking = Ranking()
+
 while True:
+
     print ("""
 [1] Adicionar jogador
 [2] Remover jogador
